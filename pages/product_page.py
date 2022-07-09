@@ -21,10 +21,8 @@ class ProductPage(BasePage):
                                                             "do not match"
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(
-            *ProductPageLocators.MSG_PRODUCT_ADDED), \
-            "Success message that product is added is presented, " \
-            "but should not be"
+        assert not self.is_element_present(*ProductPageLocators.MSG_PRODUCT_ADDED),\
+            "Success message is presented"
 
     def should_be_success_message_disappeared(self):
         assert self.is_disappeared(
