@@ -1,17 +1,15 @@
 import math
-
 from selenium.common.exceptions import NoSuchElementException, \
     NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
 from .locators import BasePageLocators
 
 
 class BasePage:
 
-    def __init__(self, browser, url, timeout=50):
+    def __init__(self, browser, url, timeout=4):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
